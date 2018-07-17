@@ -58,8 +58,7 @@ func (g *Generator) categorizeHosts() ([]string, []net.IP, error) {
 			ipAddresses = append(ipAddresses, ip)
 			glog.V(0).Infof("Added IP address %s", ip.String())
 			continue
-		}
-		if strings.ContainsRune(host, rune('.')) {
+		} else {
 			dnsNames = append(dnsNames, host)
 			glog.V(0).Infof("Added DNS name %s", host)
 			continue
